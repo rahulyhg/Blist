@@ -1,0 +1,17 @@
+{
+    "name": "sergiuszn/blist",
+    "license": "MIT",
+    "description": "The Grocery Shopping List App",
+    "authors": [
+        {
+            "name": "Sergiusz Nikolenko",
+            "email": "serg.ni2011@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Blist\\": "src/"
+        }
+    },
+    "require": {}
+}
