@@ -15,6 +15,20 @@ class UserRepository
         return $query;
     }
 
+    /**
+     * @param $username
+     * @return UserEntity|null
+     */
+    public function findOneByUsername($username)
+    {
+        $query = $this->createQuery("SELECT * FROM user WHERE username=:username");
+        $query->execute(['username' => $username]);
+        return $query->fetch();
+    }
+
+    /**
+     * @return UserEntity[]
+     */
     public function findAll()
     {
         $query = $this->createQuery("SELECT * FROM user");

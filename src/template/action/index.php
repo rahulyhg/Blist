@@ -3,7 +3,10 @@
 
     <div class="container">
         <h1>Hello, World</h1>
-        <a href="<?= $this->url('App', 'post') ?>">Test Url!</a>
+        <a href="<?= $this->url('User', 'login') ?>">Log In!</a>
+        <?php /** @var \Blist\Core\View $this */ ?>
+        <p>User: <?php if ($this->getUser()): ?><?=$this->getUser()->getUsername()?><?php else: ?>__________<?php endif; ?></p>
+
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque delectus deserunt nemo tempora voluptatibus.
             Deserunt dicta ducimus fugit harum labore odio omnis quod repellat unde voluptatibus. Cumque eum laborum
             vero.</p>

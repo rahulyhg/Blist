@@ -3,6 +3,7 @@
 namespace Blist\Core;
 
 use Blist\Controller\AppController;
+use Blist\Service\SecurityService;
 
 require_once __DIR__ . '/../../config.php';
 
@@ -10,6 +11,7 @@ class Core
 {
     public function __construct()
     {
+        SecurityService::init();
         Database::connect();
         $this->dispatch();
     }
