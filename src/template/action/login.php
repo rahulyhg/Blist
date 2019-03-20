@@ -7,16 +7,16 @@
         <?php require_once __DIR__ . '/../component/flashes.php' ?>
 
         <form action="<?= $this->url('User', 'loginSubmit') ?>" method="post">
-            <div>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required="required">
+            <div class="group">
+                <label for="username" class="label">Username:</label>
+                <input type="text" id="username" name="username" required="required" class="input">
             </div>
-            <div>
-                <label for="password">Password:</label>
-                <input type="text" id="password" name="password" required="required">
+            <div class="group">
+                <label for="password" class="label">Password:</label>
+                <input type="password" id="password" name="password" required="required" class="input">
             </div>
-            <div>
-                <input type="submit" name="submit" id="submit" value="Submit">
+            <div class="group">
+                <input type="submit" name="submit" id="submit" value="Submit" class="btn">
             </div>
         </form>
     </div>

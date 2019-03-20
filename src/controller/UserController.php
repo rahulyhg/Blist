@@ -34,6 +34,8 @@ class UserController
             return View::Redirect('App', 'index');
         } else {
             View::setFlash('error', $result[1]);
+            View::setFlash('success', $result[1]);
+            View::setFlash('warning', $result[1]);
             return View::Redirect('User', 'login');
         }
     }

@@ -10,7 +10,7 @@ class Database
     /** @var PDO */
     public static $connection = null;
 
-    public static function connect()
+    public static function init()
     {
         if (!self::$connection) {
             try {

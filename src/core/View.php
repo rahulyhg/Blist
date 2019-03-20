@@ -13,17 +13,35 @@ class View
     /** @var string */
     private $path;
 
+    /** @var array */
+    public $trans;
+
     public function __construct($path, $parameters = [], $code = 200)
     {
         http_response_code($code);
         $this->params = (object) $parameters;
         $this->path = $path;
+
+        $this->readLang();
+    }
+
+    private function readLang()
+    {
+        $lang = $_COOKIE['lang'] ?? 'en';
+        $lang = file_exists(__DIR__ . "/../template/trans.{$lang}.php") ? $lang : 'en';
+        /** @noinspection PhpIncludeInspection */
+        $this->trans = require_once __DIR__ . "/../template/trans.{$lang}.php";
     }
 
     public function render()
     {
         /** @noinspection PhpIncludeInspection */
         require_once $this->path;
+    }
+
+    public function rootUrl()
+    {
+        return \Config::$url;
     }
 
     public function url($controller, $action)

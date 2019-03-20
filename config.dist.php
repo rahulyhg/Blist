@@ -7,4 +7,5 @@ class ConfigDist
     public static $dbPass = '$password';
     public static $rootPath = __DIR__;
     public static $url = 'http://localhost';
+    public static $securedControllers = [];
 }
